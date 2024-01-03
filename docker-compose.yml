@@ -1,0 +1,9 @@
+version: "3"
+services:
+  api:
+    build: .
+    command: "./server -m models/codellama-7b.Q4_K_M.gguf -c 2048 --host 0.0.0.0"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/local-llm/llama.cpp/models
